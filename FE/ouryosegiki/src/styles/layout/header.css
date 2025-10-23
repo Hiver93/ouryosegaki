@@ -1,0 +1,9 @@
+.header{
+    height: 50;
+    color: #6C756B;
+    border-bottom: #6C756B solid 2px;
+    padding: 5px
+}
+.header-bottom{
+    height: 5vh;
+}
