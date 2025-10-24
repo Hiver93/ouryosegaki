@@ -2,9 +2,12 @@ import "../styles/layout/header.css"
 
 function Header(){
     return(
-        <header> 
-            <div className="header">Service</div>
-        </header>
+        <div>
+            <header> 
+                <div className="header">Service</div>
+            </header>
+            <div className="header-bottom"></div>
+        </div>
     )
 }
 
