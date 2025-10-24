@@ -1,0 +1,9 @@
+.button-main-action{
+    margin-bottom: 10px;
+    height: 30px;
+    width: 120px;
+    border: rgba(0, 0, 0, 0);
+    border-radius: 5px;
+    background-color: #A9D3FF;
+    color: #ffffff;
+}

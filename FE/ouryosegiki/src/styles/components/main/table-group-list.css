@@ -1,0 +1,14 @@
+.title-group-table{
+    border-bottom: solid #6C756B 2px;
+    height: 30px;
+    text-align: left;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #6C756B;
+}
+
+.table-group-list{
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+}
