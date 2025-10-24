@@ -2,7 +2,8 @@ import '.././styles/pages/main-page.css'
 
 import Header from "../layout/Header"
 import MainContainer from "../containers/MainContainer"
-import MainMenuButton from '../component/main/MainMenuButton'
+import MainMenuButton from '../component/main/main/MainMenuButton'
+import CreateContainer from '../containers/CreateContainer'
 function MainPage(){
     return(
         <div className='body'>
@@ -12,7 +13,8 @@ function MainPage(){
                     <MainMenuButton name="search"></MainMenuButton>
                     <MainMenuButton name="create"></MainMenuButton>
                 </div>
-                <MainContainer></MainContainer>
+                {/* <MainContainer></MainContainer> */}
+                <CreateContainer></CreateContainer>
             </div>
         </div>
     )

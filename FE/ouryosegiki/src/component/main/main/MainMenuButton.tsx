@@ -1,4 +1,4 @@
-import '../../styles/components/main/main-menu-button.css'
+import '../../../styles/components/main/main-menu-button.css'
 
 function MainMenuButton(props : any){
     return (

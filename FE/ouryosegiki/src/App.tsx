@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import MainPage from "./pages/MainPage"
+import GroupPage from './pages/GroupPage'
 
 
 function App() {
@@ -7,9 +8,10 @@ function App() {
 
   return (
     <>
-      <MainPage>
+      {/* <MainPage>
 
-      </MainPage>
+      </MainPage> */}
+      <GroupPage></GroupPage>
     </>
   )
 }

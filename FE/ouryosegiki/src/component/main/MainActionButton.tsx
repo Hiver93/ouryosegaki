@@ -1,8 +1,8 @@
 import '../../styles/components/main/button-main-action.css'
 
-function MainActionButton(){
+function MainActionButton(props :any){
     return (
-        <button className="button-main-action">search</button>
+        <button className="button-main-action">{props.name}</button>
     )
 }
 

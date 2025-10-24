@@ -1,4 +1,4 @@
-import '../../styles/components/main/search-box.css'
+import '../../../styles/components/main/search-box.css'
 
 function SearchBox(){
     return (

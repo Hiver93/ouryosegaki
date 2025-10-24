@@ -1,13 +1,13 @@
 import '../styles/containers/main-containers.css'
-import SearchBox from '../component/main/SearchBox'
+import SearchBox from '../component/main/main/SearchBox'
 import MainActionButton from '../component/main/MainActionButton'
-import GroupListTable from '../component/main/GroupListTable'
+import GroupListTable from '../component/main/main/GroupListTable'
 
 function MainContainer(){
     return(
         <div>
             <SearchBox></SearchBox>
-            <MainActionButton></MainActionButton>
+            <MainActionButton name="search"></MainActionButton>
             <GroupListTable title="group number">
             </GroupListTable>
             <GroupListTable title="group name"></GroupListTable>

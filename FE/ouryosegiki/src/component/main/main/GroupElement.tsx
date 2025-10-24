@@ -1,4 +1,4 @@
-import '../../styles/components/main/group-element.css'
+import '../../../styles/components/main/group-element.css'
 
 function GroupElement(props :any){
     return(

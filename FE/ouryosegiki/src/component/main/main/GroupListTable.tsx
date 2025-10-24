@@ -1,4 +1,4 @@
-import '../../styles/components/main/table-group-list.css'
+import '../../../styles/components/main/table-group-list.css'
 import GroupElement from './GroupElement'
 
 function GroupListTable(props :any){
