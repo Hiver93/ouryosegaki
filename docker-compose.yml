@@ -1,0 +1,30 @@
+version: '3.3'
+services:
+    mysqldb:
+        build: ./DB/MySQL
+        env_file:
+            - ./DB/MySQL/mysql.env
+        container_name: db_mysql
+        ports:
+            - '3306:3306'
+        volumes:
+            - ./DB/MySQL/res/data/:/var/lib/mysql
+        environment:
+            - TZ=Asia/Seoul
+
+    backend_spring:
+        build: ./BE/Spring/yosegaki
+        container_name: backend_spring
+        ports:
+            - '8080:8080'
+        volumes:
+            - ./BE/Spring/yosegaki:/srv/docker-server
+    nginx:
+        image: nginx:1.15-alpine
+        container_name: nginx
+        restart: unless-stopped
+        volumes:
+            - ./data/nginx:/etc/nginx/conf.d
+        ports:
+            - '80:80'
+        command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
