@@ -1,0 +1,7 @@
+FROM node:22.20.0
+LABEL name = "hiver93"
+LABEL email = "kdw3238@naver.com"
+
+RUN mkdir /srv/docker-server
+WORKDIR /srv/docker-server
+CMD npm build && npm serve
