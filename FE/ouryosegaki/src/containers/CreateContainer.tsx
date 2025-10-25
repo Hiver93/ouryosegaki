@@ -6,7 +6,7 @@ import MainActionButton from "../component/main/MainActionButton"
 
 function CreateContainer(){
     return(
-        <div>
+        <div className='create-container'>
             <div className="container-input">
                 <GroupNameBox></GroupNameBox>
                 <PasswordBox></PasswordBox>

@@ -6,3 +6,6 @@
     opacity: 0.7;
     border-radius: 10px;
 }
+.button-main-menu:hover{
+    background-color: #A9D3FF;
+}
