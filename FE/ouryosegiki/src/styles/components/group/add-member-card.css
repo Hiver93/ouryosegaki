@@ -1,0 +1,16 @@
+.card-add-member{
+    margin:5px;
+
+    display: flex;
+}
+.name-card-add-member{
+    width: 90%;
+}
+.cancel-add-member{
+    width: 10%;
+    text-align: center;
+    line-height: 1.1;
+    background-color: #6c756b;
+    border-radius: 5px;
+    color: #ffffff;
+}

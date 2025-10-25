@@ -1,0 +1,54 @@
+.container-modal-create-yosegaki{
+    /* display: none; */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background-color: rgba(0, 0, 0, .3);
+    
+    width: 100vw;
+    height: 100vh;
+    z-index: 99;
+    top: 0;
+    left: 0;
+
+}
+
+.modal-create-yosegaki{
+    width: 70%;
+    height: 60%;
+    background-color: #93acb5;
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+}
+.text-create-yosegaki{
+    margin: 10px;
+    margin-top: 20px;
+    height: 80%;
+    background-color: #ffffff;
+    border-radius: 10px;
+
+}
+.button-create-complete{
+    width: 50px;    
+    height: 30px;
+    border: 0px;
+    border-radius: 10px;
+    margin-right: 10px;
+    margin-left: auto;
+    background-color: #F2f4ff;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
+
+/* <div className='container-modal-create-yosegaki'>
+            <div className='modal-create-yosegaki'>
+                <textarea  className='text-create-yosegaki'>
+                    
+                </textarea>
+                <button className='button-create-complete'>{">"}</button> */

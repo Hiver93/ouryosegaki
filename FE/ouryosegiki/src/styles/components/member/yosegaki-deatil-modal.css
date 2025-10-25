@@ -1,0 +1,21 @@
+.modal-yosegaki{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background-color: rgba(0, 0, 0, .3);
+    
+    width: 100vw;
+    height: 100vh;
+    z-index: 99;
+    top: 0;
+    left: 0;
+}
+
+.container-yosegaki-detail{
+    background-color: #6c756b;
+    height: 50%;
+    width: 60%;
+    border-radius: 10px;
+    padding: 20px;
+}
