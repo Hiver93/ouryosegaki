@@ -21,7 +21,7 @@ services:
             - ./BE/Spring/yosegaki:/srv/docker-server
 
     front_node:
-        build: ./front
+        build: ./FE/ouryosegaki
         container_name: front_node
         # env_file:
         # - ./front/front.env
