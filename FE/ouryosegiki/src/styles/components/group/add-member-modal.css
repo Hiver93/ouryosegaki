@@ -1,0 +1,60 @@
+.container-modal-add-member{
+    /* display: none; */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background-color: rgba(0, 0, 0, .3);
+    
+    width: 100vw;
+    height: 100vh;
+    z-index: 99;
+    top: 0;
+    left: 0;
+
+}
+
+.modal-add-member{
+    width: 70%;
+    height: 60%;
+    background-color: #93acb5;
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+}
+.input-name{
+    margin: 10px;
+    border-radius: 8px;
+    height: 25px;
+}
+.button-member-add{
+    width: 50px;
+    height: 30px;
+    border: 0px;
+    border-radius: 10px;
+    margin-right: 10px;
+    margin-left: auto;
+    background-color: #F2f4ff;
+    font-weight: bold;
+    font-size: 20px;
+}
+.table-add-member-name{
+    margin: 10px;
+    height: 65%;
+    background-color: #ffffff;
+    border: solid 1px #000000;
+    border-radius: 10px;
+}
+.button-member-complete{
+    width: 50px;    
+    height: 30px;
+    border: 0px;
+    border-radius: 10px;
+    margin-right: 10px;
+    margin-left: auto;
+    background-color: #F2f4ff;
+    font-weight: bold;
+    font-size: 20px;
+}

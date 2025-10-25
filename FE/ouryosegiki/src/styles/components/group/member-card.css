@@ -1,0 +1,9 @@
+.card-member{
+    text-align: center;
+    background-color: #f2f4ff;
+    color: #6c756b;
+    width: 90%;
+    height: 50px;
+    line-height: 50px;
+    margin: 10px;
+}
