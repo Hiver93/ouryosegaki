@@ -4,4 +4,4 @@ LABEL email = "kdw3238@naver.com"
 
 RUN mkdir /srv/docker-server
 WORKDIR /srv/docker-server
-CMD npm build && npm serve
+CMD npm run build && npm serve
