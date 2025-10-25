@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import MainPage from "./pages/MainPage"
 import GroupPage from './pages/GroupPage'
-
+import MemberPage from './pages/MemberPage'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -11,7 +11,8 @@ function App() {
       {/* <MainPage>
 
       </MainPage> */}
-      <GroupPage></GroupPage>
+      {/* <GroupPage></GroupPage> */}
+      <MemberPage></MemberPage>
     </>
   )
 }

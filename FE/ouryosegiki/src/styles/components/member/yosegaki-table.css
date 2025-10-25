@@ -1,0 +1,13 @@
+.table-yosegaki{
+    margin-top: 5px;
+    border: solid 1px black;
+    /* background-color: red; */
+    width: 90%;
+    height: 70vh;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0;
+    align-content: flex-start;
+}
