@@ -9,7 +9,7 @@ import storage from 'redux-persist/lib/storage'
 // import mentoringReducer from './mentoringSlice'
 // import rollingReducer from './rollingSlice'
 import mainReducer from './mainSlice'
-import groupReducer from './GroupSlice'
+import groupReducer from './groupSlice'
 import memberReducer from './memberSlice'
 
 const reducers = combineReducers ({
