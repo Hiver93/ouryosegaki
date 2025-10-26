@@ -12,30 +12,30 @@ import type { RootState } from './store'
 //     posY: reviewHeight,
 // ***************************************
 
-interface GroupInfo{
-    groupId: number,
+interface MemberInfo{
+    memberId: number,
     name: string
 }
 
-interface GroupState{
-    groupList: Array<GroupInfo>
+interface MemberState{
+    memberList: Array<MemberInfo>
 }
 
-const initialState: GroupState = {
-    groupList:[]
+const initialState: MemberState = {
+    memberList:[]
 }
 
-export const GroupSlice = createSlice({
-  name: 'mentoring',
+export const MemberSlice = createSlice({
+  name: 'member',
   initialState,
   reducers: {
-    setGroupList: (state, action: PayloadAction<GroupState>)=>{
-        state.groupList = action.payload.groupList
+    setMemberList: (state, action: PayloadAction<MemberState>)=>{
+        state.memberList = action.payload.memberList
     }
     }
   }
 )
 
-export const { setGroupList } = GroupSlice.actions;
-export default GroupSlice.reducer
-export type {GroupInfo}
+export const { setMemberList } = MemberSlice.actions;
+export default MemberSlice.reducer
+export type {MemberInfo}

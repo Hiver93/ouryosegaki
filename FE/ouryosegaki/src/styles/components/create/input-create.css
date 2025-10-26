@@ -8,6 +8,10 @@
     padding-right: 5px;
     margin: 3px;
 }
+.create-box-name{
+}
+.create-box-pw{
+}
 .create-box::placeholder{
     color: black;
     opacity: 0.2;

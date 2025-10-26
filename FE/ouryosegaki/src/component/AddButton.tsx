@@ -1,8 +1,8 @@
 import '../styles/components/add-button.css'
 
-function AddButton(){
+function AddButton(props :any){
     return(
-        <div className='button-add'>
+        <div onClick={props.click} className='button-add'>
             +
         </div>
     )

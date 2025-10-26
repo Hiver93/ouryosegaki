@@ -9,18 +9,22 @@ import storage from 'redux-persist/lib/storage'
 // import mentoringReducer from './mentoringSlice'
 // import rollingReducer from './rollingSlice'
 import mainReducer from './mainSlice'
+import groupReducer from './GroupSlice'
+import memberReducer from './memberSlice'
 
 const reducers = combineReducers ({
 //   counter: counterReducer,
 //   applying: applyingReducer,
-    main: mainReducer
+    main: mainReducer,
+    group: groupReducer,
+    member: memberReducer
 })
 
 const persistConfig = {
   key: 'root',
   storage,
   // whitelist: ['user'],
-  blacklist: ['applying', 'mentoring'],
+  // blacklist: ['applying', 'mentoring'],
 }
 
 const persistedReducer = persistReducer(persistConfig, reducers);

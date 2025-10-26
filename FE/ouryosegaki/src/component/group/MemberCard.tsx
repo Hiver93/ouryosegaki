@@ -1,9 +1,9 @@
 import '../../styles/components/group/member-card.css'
 
-function MemberCard(){
+function MemberCard(props :{memberId:number, name: string}){
     return(
         <div className='card-member'>
-            Username
+            {props.name}
         </div>
     )
 }

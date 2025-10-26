@@ -1,18 +1,10 @@
 import { localServer } from "./http";
 
 const api = localServer();
-
-async function getGroupList(info:{keyword : string}, success : any, fail : any){
-    
-    await api.get(`/groups${"?keyword="+info.keyword}`)
-    .then(success)
-    .catch(fail);
-}
-
 async function postGroup(info:{name :string, password: string},success : any, fail : any){
     await api.post(`/groups`, info)
         .then(success)
         .catch(fail);
 }
 
-export {getGroupList, postGroup}
+export {postGroup}

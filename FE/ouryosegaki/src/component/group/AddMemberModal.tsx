@@ -1,9 +1,9 @@
 import '../../styles/components/group/add-member-modal.css'
 import AddMemberCard from './AddMemberCard'
-function AddMemberModal(){
+function AddMemberModal(props :any){
     return(
-        <div className='container-modal-add-member'>
-            <div className='modal-add-member'>
+        <div className='container-modal-add-member' onClick={props.clickClose}>
+            <div className='modal-add-member' onClick={(e)=>e.stopPropagation()}>
                 <input className='input-name' placeholder='enter name'></input>
                 <button className='button-member-add'>{"+"}</button>
                 <div className='table-add-member-name'>
