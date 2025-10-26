@@ -5,7 +5,7 @@ import PasswordBox from "../component/main/main/PasswordBox"
 import MainActionButton from "../component/main/MainActionButton"
 import { postGroup } from '../api/mainApi';
 import { useNavigate } from 'react-router-dom';
-import { setGroupDetail, type GroupDetailInfo } from '../store/GroupSlice';
+import { setGroupDetail, type GroupDetailInfo } from '../store/groupSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import type { AppDispatch, RootState } from '../store/store';
 
