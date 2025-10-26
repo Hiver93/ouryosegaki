@@ -6,6 +6,7 @@ import type { AxiosRequestConfig } from "axios";
 function localServer() {
   const axiosConfig: AxiosRequestConfig = {
     baseURL: "http://43.207.181.178:8080/", // 직접 URL 지정
+    // baseURL: "http://localhost:8080/", // 직접 URL 지정
     headers: {
       "Content-Type": "application/json;charset=utf-8",
     },

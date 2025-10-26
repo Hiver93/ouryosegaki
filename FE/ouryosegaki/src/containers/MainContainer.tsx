@@ -17,6 +17,7 @@ function MainContainer(){
         // console.log("check \n"+state.main.groupList)
         return state.main.groupList
     });
+    
 
     const handleSearch = () => {
         // getGroupList는 (info, success, fail) 형태로 사용

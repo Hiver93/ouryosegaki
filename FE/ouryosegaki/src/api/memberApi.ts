@@ -9,5 +9,12 @@ async function getGroupMembers(info:{password : string, groupId: number}, succes
     .catch(fail);
 }
 
+async function postMembers(info:{password: string, memberList: Array<string>, groupId:number}, success: any, fail : any){
+    console.log(info.password)
+    await api.post(`/groups/${info.groupId}/members`,{password:info.password, memberList:info.memberList})
+    .then(success)
+    .catch(fail);
+} 
 
-export {getGroupMembers}
+
+export {getGroupMembers, postMembers}

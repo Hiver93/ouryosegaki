@@ -11,13 +11,15 @@ import storage from 'redux-persist/lib/storage'
 import mainReducer from './mainSlice'
 import groupReducer from './groupSlice'
 import memberReducer from './memberSlice'
+import addMemberReducer from './addMemberSlice'
 
 const reducers = combineReducers ({
 //   counter: counterReducer,
 //   applying: applyingReducer,
     main: mainReducer,
     group: groupReducer,
-    member: memberReducer
+    member: memberReducer,
+    addMember: addMemberReducer
 })
 
 const persistConfig = {

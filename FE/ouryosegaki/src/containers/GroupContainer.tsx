@@ -48,10 +48,10 @@ function GroupContainer(){
             <MemberTable memberList={memberList}>
 
             </MemberTable>
-            {isModalOpen === true && <AddMemberModal clickClose={() => setIsModalOpen(false)}/>}
+            {isModalOpen === true && <AddMemberModal reGet={handleMemberSearch} clickClose={() => setIsModalOpen(false)}/>}
             {/* <AddMemberModal></AddMemberModal> */}
         </div>
     )
 }                
-
+ 
 export default GroupContainer
