@@ -11,7 +11,7 @@ import type { AppDispatch, RootState } from '../store/store'
 
 function MainContainer(){
     const dispatch = useDispatch<AppDispatch>();  
-
+     
     const [keyword, setKeyword] = useState("");
     const groupList: Array<GroupInfo> = useSelector((state: RootState) => {
         // console.log("check \n"+state.main.groupList)
@@ -36,7 +36,7 @@ function MainContainer(){
 
     return(
         <div className='main-container'>
-            <SearchBox onChange={setKeyword}></SearchBox>
+            <SearchBox onChange={setKeyword} holder="enter number or keyword" ></SearchBox>
             <MainActionButton name="search" click={handleSearch}></MainActionButton>
             <GroupListTable title="group number" groupList={groupList.slice(0,1)}>
             </GroupListTable>

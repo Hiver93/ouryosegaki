@@ -14,12 +14,7 @@ function CreateYosegakiModal(props :any){
     const handleYosegakiSearch = () => {
         console.log("gethethetehtehteht")
         getYosegakies(
-            //
-            //
-            //id 바꿔야함 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-            //
-            //
-            {password:groupDetail.password, memberId:1},
+            {password:groupDetail.password, memberId:memberDetail.id},
             // 성공 콜백
             (res : any)=>{
                 console.log("서버 응답:", res.data);    
@@ -42,29 +37,25 @@ function CreateYosegakiModal(props :any){
         if(!password){
             alert('enter password')
             return;
-        }
-        //
-        //
-        // id 넣어야함 !!!!!!!!!!!!!!!!!!!!!!!!!!!
-        //
-        //        
+        }   
+        console.log(memberDetail) 
         postYosegaki(
-            { memberId: 1, content: content, password: password },
+            { memberId: memberDetail.id, content: content, password: password },
             (res: any) => {
                 console.log("서버 응답:", res.data);
+                (document.getElementsByClassName("text-create-yosegaki")[0] as HTMLInputElement).value = ""
+                // handleYosegakiSearch()
+                props.clickClose()
             },
             (err: any) => {
                 console.error("요청 실패:", err);
             }
         );
 
-        (document.getElementsByClassName("text-create-yosegaki")[0] as HTMLInputElement).value = ""
-        props.clickClose()
-        handleYosegakiSearch()
     }
 
     return (
-        <div className='container-modal-create-yosegaki'onClick={props.clickClose}>
+        <div className='container-modal-create-yosegaki' onClick={props.clickClose}>
             <div className='modal-create-yosegaki' onClick={(e)=>e.stopPropagation()}>
                 <textarea  className='text-create-yosegaki'>
                     

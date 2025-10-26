@@ -14,7 +14,7 @@ function MemberTable(props : any){
             let info = memberList[i];
             console.log(info.name)
             list.push(
-                <MemberCard memberId={info.memberId} name={info.name}></MemberCard>
+                <MemberCard memberId={info.id} name={info.name}></MemberCard>
             );
         }
     }

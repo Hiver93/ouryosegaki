@@ -14,7 +14,6 @@ function AddMemberModal(props :any){
     console.log("현재 Redux에 저장된 addmembers:", addMemberList);
 
     const memberList: Array<string> = useSelector((state: RootState) => {
-        // console.log("check \n"+state.main.groupList)
         return state.addMember.addMemberList
     });
 
@@ -41,16 +40,12 @@ function AddMemberModal(props :any){
     const handlePostMembers=()=>{
 
         postMembers(
-            //
-            //
-            //
-            //
-            //id 수정해야함
-            {groupId:1, memberList:memberList, password:groupDetail.password},
+            {groupId:groupDetail.groupId, memberList:memberList, password:groupDetail.password},
             (res: any) => {
                 
                 console.log("서버 응답:", res.data);
                 props.reGet();
+                dispatch(setAddMemberList({ addMemberList: [] }));    
                 props.clickClose()
             },
             (err: any) => {
@@ -58,8 +53,6 @@ function AddMemberModal(props :any){
                 console.error("요청 실패:", err);
             }
         )
-        //    postGroup(
-        // {name,password},
         
     
     }

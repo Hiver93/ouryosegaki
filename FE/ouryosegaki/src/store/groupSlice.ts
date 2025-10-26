@@ -2,7 +2,7 @@ import { createSlice} from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 
 interface GroupDetailInfo{
-    id :number,
+    groupId :number,
     name :string,
     password :string
 }

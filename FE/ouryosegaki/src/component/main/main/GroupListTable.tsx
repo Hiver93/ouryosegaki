@@ -12,6 +12,7 @@ function GroupListTable(props :{title:string, groupList:Array<GroupInfo>}){
         if(groupList !== undefined&&groupList[i] !== undefined){
             let info = groupList[i];
             console.log(info.name)
+            console.log("info" + i + ":" +info.groupId)
             list.push(
                 <GroupElement id={info.groupId} name={info.name}></GroupElement>
             );
@@ -24,7 +25,6 @@ function GroupListTable(props :{title:string, groupList:Array<GroupInfo>}){
                 <table className="table-group-list">       
                     <tbody>
                     {list}
-                    {/* <GroupElement id="123" name="my name is kimu"></GroupElement>  */}
                     </tbody>
                 </table>
         </div>

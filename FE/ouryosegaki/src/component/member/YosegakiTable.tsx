@@ -15,12 +15,7 @@ function YosegakiTable(props :any){
     const handleYosegakiSearch = () => {
         console.log(memberDetail.id)
         getYosegakies(
-            //
-            //
-            //id 바꿔야함
-            //
-            //
-            {password:groupDetail.password, memberId:1},
+            {password:groupDetail.password, memberId:memberDetail.id},
             // 성공 콜백
             (res : any)=>{
                 console.log("서버 응답:", res.data);    
@@ -38,19 +33,10 @@ function YosegakiTable(props :any){
     // handleYosegakiSearch()
       useEffect(() => {
     handleYosegakiSearch();
-  }, [groupDetail.password, memberDetail.id]);
+  }, [props.refreshKey, groupDetail.password, memberDetail.id]);
+  
     return(
         <div className="table-yosegaki">
-            {/* <Yosegaki setModal={props.setModal} content="おめえでとうございます。こんごともよろしくおねがいします。すごくたのしかったです。おめえでとうございます。こんごともよろしくおねがいします。すごくたのしかったです。"></Yosegaki>
-            <Yosegaki content="omedeto"></Yosegaki> */}
-            {/* <Yosegaki content="omedeto"></Yosegaki>
-            <Yosegaki content="omedeto"></Yosegaki> */}
-            {/* {yosegakiList.map((y,idx)=>(
-                <Yosegaki key={idx} setModal={props.setModal} content={y.content} />
-            ))} */}
-             {/* {addMemberList.map((name, index) => (
-                        <AddMemberCard key={index} idx={index} name={name} />
-                    ))} */}
             {yosegakiList.length > 0 ? (
                 yosegakiList.map((y, idx) => (
                 <Yosegaki key={idx} setModal={props.setModal} setDetail={props.setDetail} content={y.content} />
