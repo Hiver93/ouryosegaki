@@ -18,6 +18,7 @@ import com.kdw.yosegaki.domain.Member;
 import com.kdw.yosegaki.dto.GroupReqDto;
 import com.kdw.yosegaki.dto.GroupResDto;
 import com.kdw.yosegaki.dto.MemberReqDto;
+import com.kdw.yosegaki.service.GroupService;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -27,12 +28,14 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class GroupController {
 	
+	private final GroupService groupService;
+	
 	@GetMapping
 	public ResponseEntity<BaseResBody<GroupResDto.GroupList>> getGroupList(
-			@RequestParam(name = "keyword") String keyword
+			@RequestParam(value = "keyword") String keyword
 			){
-		List<Group> list = List.of(Group.builder().name(keyword).build(), Group.builder().name(keyword).build());
-		return new BaseResBody<>(GroupResDto.GroupList.from(list), "success")
+		
+		return new BaseResBody<>(GroupResDto.GroupList.from(this.groupService.getGroupList(keyword)), "success")
 				.toResponse(HttpStatus.OK);
 	}
 	
@@ -41,9 +44,8 @@ public class GroupController {
 			@PathVariable(name = "groupId") Integer groupId,
 			@RequestBody @Valid GroupReqDto.Detail dto
 			){
-		System.out.println(groupId);
-		System.out.println(dto.getPassword());
-		List<Member> list = List.of(Member.builder().name("kim").build(),Member.builder().name("park").build());
+		
+		List<Member> list = this.groupService.getGroupMembers(groupId, dto.getPassword());
 		return new BaseResBody<>(GroupResDto.GroupDetail.from(list), "success").toResponse(HttpStatus.OK);
 	}
 	
@@ -51,9 +53,8 @@ public class GroupController {
 	public ResponseEntity<BaseResBody<GroupResDto.Create>> postGroup(
 			@RequestBody @Valid GroupReqDto.Post dto
 			){
-		System.out.println(dto.getName());
-		System.out.println(dto.getPassword());
-		return new BaseResBody<>(GroupResDto.Create.from(Group.builder().build()),"s").toResponse(HttpStatus.CREATED);
+		
+		return new BaseResBody<>(GroupResDto.Create.from(this.groupService.createGroup(dto.getName(), dto.getPassword())),"success").toResponse(HttpStatus.CREATED);
 	}
 	
 	@PostMapping("/{groupId}/members")
@@ -61,8 +62,7 @@ public class GroupController {
 			@PathVariable(name = "groupId") Integer groupId,
 			@RequestBody @Valid MemberReqDto.Post dto
 			){
-		System.out.println(dto.getPassword());
-		dto.getMemberList().stream().forEach(System.out::println);
+		this.groupService.addMembers(groupId, dto.getPassword(), dto.getMemberList());
 		return new BaseResBody<Void>(null,"s").toResponse(HttpStatus.CREATED);
 	}
 }

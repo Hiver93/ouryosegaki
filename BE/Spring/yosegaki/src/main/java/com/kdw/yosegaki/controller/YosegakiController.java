@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,6 +14,7 @@ import com.kdw.yosegaki.common.BaseResBody;
 import com.kdw.yosegaki.domain.Yosegaki;
 import com.kdw.yosegaki.dto.YosegakiReqDto;
 import com.kdw.yosegaki.dto.YosegakiResDto;
+import com.kdw.yosegaki.service.YosegakiService;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -23,23 +24,30 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class YosegakiController {
 	
-	@GetMapping
-	public ResponseEntity<BaseResBody<List<YosegakiResDto.Content>>> getYosegakiList(){
+	private final YosegakiService yosegakiService;
+	
+	@PostMapping("/get/{memberId}")
+	public ResponseEntity<BaseResBody<YosegakiResDto.YosegakiList>> getYosegakiList(
+			@PathVariable(name = "memberId") Integer memberId,
+			@RequestBody @Valid YosegakiReqDto.Get dto
+			){
 		
-		List<YosegakiResDto.Content> list = List.of(YosegakiResDto.Content.from(Yosegaki.builder().content("hello").build()),
-				YosegakiResDto.Content.from(Yosegaki.builder().content("good").build())); 
+		YosegakiResDto.YosegakiList list = YosegakiResDto.YosegakiList.from(
+					this.yosegakiService.getYosegakiList(memberId, dto.getPassword())
+				);
+				
 		
 		return new BaseResBody<>(
 				list, "success"
 				).toResponse(HttpStatus.OK);
 	}
 	
-	@PostMapping
+	@PostMapping("/{memberId}")
 	public ResponseEntity<BaseResBody<Void>> postYosegaki(
+			@PathVariable(name = "memberId") Integer memberId,
 			@RequestBody @Valid YosegakiReqDto.Post dto
 			){
-		System.out.println(dto.getContent());
-		System.out.println(dto.getPassword());
-		return new BaseResBody<Void>(null,"s").toResponse(HttpStatus.CREATED);
+		this.yosegakiService.postYosegaki(memberId, dto.getContent(), dto.getPassword());
+		return new BaseResBody<Void>(null,"success").toResponse(HttpStatus.CREATED);
 	}
 }

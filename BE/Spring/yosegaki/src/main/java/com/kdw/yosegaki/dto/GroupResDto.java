@@ -19,7 +19,7 @@ public class GroupResDto {
 		}
 		
 		private static record GroupItem(
-				Integer id,
+				Integer groupId,
 				String name
 				) {
 			private static GroupItem from(Group group) {
