@@ -12,6 +12,8 @@ import mainReducer from './mainSlice'
 import groupReducer from './groupSlice'
 import memberReducer from './memberSlice'
 import addMemberReducer from './addMemberSlice'
+import memberDetailReducer from './memberDetailSlice'
+import yosegakiReducer from './yosegakiSlice'
 
 const reducers = combineReducers ({
 //   counter: counterReducer,
@@ -19,7 +21,9 @@ const reducers = combineReducers ({
     main: mainReducer,
     group: groupReducer,
     member: memberReducer,
-    addMember: addMemberReducer
+    addMember: addMemberReducer,
+    memberDetail: memberDetailReducer,
+    yosegaki: yosegakiReducer
 })
 
 const persistConfig = {

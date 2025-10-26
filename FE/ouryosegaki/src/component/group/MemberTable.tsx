@@ -8,6 +8,7 @@ function MemberTable(props : any){
     let list = []
     const memberList = props.memberList ?? []
 
+
     for(let i = 0; i < memberList.length; ++i){
         if(memberList !== undefined&&memberList[i] !== undefined){
             let info = memberList[i];
