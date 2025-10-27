@@ -1,6 +1,5 @@
 package com.kdw.yosegaki.dto;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import com.kdw.yosegaki.domain.Group;

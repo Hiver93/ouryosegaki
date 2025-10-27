@@ -7,6 +7,8 @@ import org.springframework.stereotype.Service;
 
 import com.kdw.yosegaki.domain.Group;
 import com.kdw.yosegaki.domain.Member;
+import com.kdw.yosegaki.error.ErrorCode;
+import com.kdw.yosegaki.error.YosegakiException;
 import com.kdw.yosegaki.repository.GroupRepository;
 import com.kdw.yosegaki.repository.MemberRepository;
 
@@ -51,7 +53,7 @@ public class GroupService {
 	public List<Member> getGroupMembers(Integer id, String password) {
 		Group saved = this.groupRepository.findById(id).orElseThrow();
 		if(!saved.getPassword().equals(password)) {
-			throw new RuntimeException();
+			throw new YosegakiException(ErrorCode.INCORRECT_PASSWORD);
 		}
 		return this.memberRepository.findAllByGroup(saved);
 	}
@@ -59,7 +61,7 @@ public class GroupService {
 	public void addMembers(Integer id, String password, List<String> members) {
 		Group saved = this.groupRepository.findById(id).orElseThrow();
 		if(!saved.getPassword().equals(password)) {
-			throw new RuntimeException();
+			throw new YosegakiException(ErrorCode.INCORRECT_PASSWORD);
 		}
 		List<Member> list = members.stream().map((str)->{
 			return Member.builder().name(str).group(saved).build();

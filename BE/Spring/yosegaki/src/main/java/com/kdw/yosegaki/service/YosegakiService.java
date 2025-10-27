@@ -19,8 +19,10 @@ public class YosegakiService {
 	private final YosegakiRepository yosegakiRepository;
 	private final MemberRepository memberRepository;
 	private final GroupRepository groupRepository;
+	private final BadwordService badwordService;
 	
 	public void postYosegaki(Integer memberId, String content, String password) {
+		badwordService.checkBadword(content);
 		Member member = memberRepository.findById(memberId).orElseThrow();
 		Yosegaki yosegaki = Yosegaki.builder().member(member).content(content).build();
 		yosegakiRepository.save(yosegaki);
