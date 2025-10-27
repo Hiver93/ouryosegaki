@@ -10,6 +10,7 @@ import { useNavigate } from 'react-router-dom';
 function MemberContainer(){
     const navigate = useNavigate();
     const groupDetail = useSelector((state: RootState) => state.group.groupDetail);
+    const memberDetail = useSelector((state:RootState)=>state.memberDetail.memberDetail)
     const [isDetailOpen, setIsDetailOpen] = useState(false);
     const [isCreateOpen, setIsCreateOpen] = useState(false);
     const [detailContent, setDetailContent] = useState("");
@@ -24,7 +25,7 @@ function MemberContainer(){
                 <div className="title-group-name-small" onClick={()=>navigate("/group")}>
                     {groupDetail.name}
                 </div>
-                <div className='title-member-name'>membername</div>
+                <div className='title-member-name'>{memberDetail.name}</div>
                 <AddButton click={()=>setIsCreateOpen(true)}></AddButton>
                 <YosegakiTable setDetail={setDetailContent} setModal={setIsDetailOpen} refreshKey={refreshKey}></YosegakiTable> 
             </div>

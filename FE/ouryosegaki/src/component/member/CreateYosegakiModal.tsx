@@ -49,6 +49,7 @@ function CreateYosegakiModal(props :any){
             },
             (err: any) => {
                 console.error("요청 실패:", err);
+                alert(err.response.data.message)
             }
         );
 
